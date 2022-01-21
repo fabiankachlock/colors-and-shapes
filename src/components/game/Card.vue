@@ -2,7 +2,7 @@
   <div class="relative m-1 p-4 bg-sky-200 dark:bg-slate-700">
     <div class="w-full h-full grid place-items-center" :class="ColorMap[card.color]">
       <!-- Content -->
-      <div :class="ShapeMap[card.shape]" class="h-full"></div>
+      <div :class="ShapeMap[card.shape]" class="max-h-full h-full max-w-full"></div>
     </div>
   </div>
 </template>
