@@ -15,22 +15,22 @@
 <script setup lang="ts">
 import { useConfig } from '@/core/adapters/config';
 import { Shape } from '@/core/business/Shapes';
-import { onMounted } from 'vue';
+import { onMounted, Ref, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 const supportedShapes = Object.values(Shape);
 const config = useConfig();
-const enabledMap: Record<string, boolean> = {};
+const enabledMap: Ref<Record<string, boolean>> = ref({});
 
 onMounted(() => {
   for (const col of config.shapes) {
-    enabledMap[col] = true;
+    enabledMap.value[col] = true;
   }
 });
 
 const clickHandler = (Shape: Shape, element: HTMLInputElement) => {
-  enabledMap[Shape] = element.checked;
+  enabledMap.value[Shape] = element.checked;
   config.setShape(Shape, element.checked);
 };
 </script>

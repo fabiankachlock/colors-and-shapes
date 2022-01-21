@@ -15,22 +15,22 @@
 <script setup lang="ts">
 import { useConfig } from '@/core/adapters/config';
 import { Color } from '@/core/business/Colors';
-import { onMounted } from 'vue';
+import { onMounted, Ref, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 const supportedColors = Object.values(Color);
 const config = useConfig();
-const enabledMap: Record<string, boolean> = {};
+const enabledMap: Ref<Record<string, boolean>> = ref({});
 
 onMounted(() => {
   for (const col of config.colors) {
-    enabledMap[col] = true;
+    enabledMap.value[col] = true;
   }
 });
 
 const clickHandler = (color: Color, element: HTMLInputElement) => {
-  enabledMap[color] = element.checked;
+  enabledMap.value[color] = element.checked;
   config.setColor(color, element.checked);
 };
 </script>

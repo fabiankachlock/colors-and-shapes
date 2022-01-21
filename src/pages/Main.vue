@@ -1,5 +1,5 @@
 <template>
-  <div id="main" class="min-w-full overflow-x-hidden overflow-y-scroll bg-slate-100 dark:bg-slate-800 full-height">
+  <div id="main" class="min-w-full overflow-x-hidden overflow-y-scroll bg-zinc-100 dark:bg-zinc-800 full-height">
     <div class="px-4 py-2 flex flex-col justify-start items-center">
       <header class="w-full flex flex-row justify-between items-start">
         <h1 class="text-3xl">{{ t('title') }}</h1>

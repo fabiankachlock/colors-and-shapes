@@ -1,8 +1,15 @@
 <template>
-  <div class="min-w-full overflow-x-hidden overflow-y-scroll bg-slate-100 dark:bg-slate-800 full-height">
+  <div class="min-w-full overflow-x-hidden overflow-y-scroll bg-zinc-100 dark:bg-zinc-800 full-height">
     <div class="px-4 py-2">
       <header class="w-full my-6">
-        <h1 class="text-5xl">{{ t('settings.title') }}</h1>
+        <div class="flex flex-eow flex-nowrap justify-between items-center">
+          <h1 class="text-5xl">{{ t('settings.title') }}</h1>
+          <div class="w-12 h-12 bg-gray-300 dark:bg-gray-700 rounded-full grid place-items-center">
+            <router-link to="/" class="text-3xl">
+              <i-ri-arrow-left-s-line />
+            </router-link>
+          </div>
+        </div>
       </header>
       <main class="my-2 flex flex-col flex-nowrap">
         <div class="row row-flex">
