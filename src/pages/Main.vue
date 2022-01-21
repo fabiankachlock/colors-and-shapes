@@ -3,6 +3,9 @@
     <header>
       <div>
         <h1>{{ t('title') }}</h1>
+        <div>
+          <router-link to="settings"> Settings </router-link>
+        </div>
       </div>
     </header>
     <main>Cards...</main>
