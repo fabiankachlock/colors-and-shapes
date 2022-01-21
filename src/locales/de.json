@@ -2,7 +2,8 @@
 	"title": "Farben",
 	"settings": {
 		"title": "Einstellungen",
-		"language": "Sprache"
+		"language": "Sprache",
+		"darkmode": "Dunkler Modus"
 	},
 	"lng": {
 		"de": "Deutsch",

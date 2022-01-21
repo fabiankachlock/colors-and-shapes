@@ -9,6 +9,10 @@
           <p class="text-xl">{{ t('settings.language') }}</p>
           <LanguageSelection />
         </div>
+        <div class="row">
+          <p class="text-xl">{{ t('settings.darkmode') }}</p>
+          <ThemeSwitch />
+        </div>
       </main>
     </div>
   </div>
@@ -17,6 +21,7 @@
 <script lang="ts" setup>
 import LanguageSelection from '@/components/settings/LanguageSelection.vue';
 import { useI18n } from 'vue-i18n';
+import ThemeSwitch from '@/components/settings/ThemeSwitch.vue';
 
 const { t } = useI18n();
 </script>
@@ -24,5 +29,6 @@ const { t } = useI18n();
 <style>
 .row {
   @apply border-gray-300 dark:border-gray-600 py-3 px-4 border-t border-b w-full flex flex-row justify-between items-center;
+  margin-top: -1px; /* border overlap */
 }
 </style>
