@@ -4,7 +4,8 @@
 		"title": "Settings",
 		"language": "Language",
 		"darkmode": "Darkmode",
-		"colors": "Colors"
+		"colors": "Colors",
+		"shapes": "Shapes"
 	},
 	"lng": {
 		"de": "Deutsch",
@@ -23,5 +24,10 @@
 		"cpi": "Pink",
 		"cbr": "Brown",
 		"csk": "Sky Blue"
+	},
+	"shape": {
+		"ssq": "Square",
+		"sci": "Circle",
+		"str": "Triangle"
 	}
 }

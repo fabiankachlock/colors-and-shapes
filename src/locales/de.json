@@ -4,7 +4,8 @@
 		"title": "Einstellungen",
 		"language": "Sprache",
 		"darkmode": "Dunkler Modus",
-		"colors": "Farben"
+		"colors": "Farben",
+		"shapes": "Formen"
 	},
 	"lng": {
 		"de": "Deutsch",
@@ -23,5 +24,10 @@
 		"cpi": "Rosa",
 		"cbr": "Braun",
 		"csk": "Himmelblau"
+	},
+	"shape": {
+		"ssq": "Quadrat",
+		"sci": "Kreis",
+		"str": "Dreieck"
 	}
 }

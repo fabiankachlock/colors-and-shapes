@@ -1,5 +1,5 @@
 import { Color } from './Colors';
-import { Shape } from './Shape';
+import { Shape } from './Shapes';
 import { v4 as uuid } from 'uuid';
 
 export class Card {

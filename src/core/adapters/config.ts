@@ -3,13 +3,15 @@ import { defineStore } from 'pinia';
 import { Card } from '../business/Card';
 import { Color } from '../business/Colors';
 import { toggleElement } from '../business/helper/toggleArrayElement';
-import { Shape } from '../business/Shape';
+import { Shape } from '../business/Shapes';
 
 const languageKey = '__$lng';
 const uiKey = '__$ui';
 const colorsKey = '__$colors';
+const shapesKey = '__$shapes';
 
 const DefaultColors = [...Object.values(Color)] as Color[];
+const DefaultShapes = [...Object.values(Shape)] as Shape[];
 
 const changeLanguage = (lng: string) => {
   setI18nLanguage(lng);
@@ -30,7 +32,7 @@ export const useConfig = defineStore('config', {
     return {
       useDarkMode: false,
       language: 'en',
-      shapes: [] as Shape[],
+      shapes: DefaultShapes,
       colors: DefaultColors,
       numberOfCard: 30 as number
     };
@@ -53,8 +55,10 @@ export const useConfig = defineStore('config', {
       });
     },
     setShape(shape: Shape, enabled: boolean) {
+      const newShapes = toggleElement(this.shapes, shape, enabled);
+      localStorage.setItem(shapesKey, JSON.stringify(newShapes));
       this.$patch({
-        shapes: toggleElement(this.shapes, shape, enabled)
+        shapes: newShapes
       });
     },
     configure() {
@@ -75,11 +79,13 @@ export const useConfig = defineStore('config', {
       changeUIMode(storedDarkMode);
 
       const storedColors = localStorage.getItem(colorsKey);
+      const storedShapes = localStorage.getItem(shapesKey);
 
       this.$patch({
         useDarkMode: storedDarkMode,
         language: language,
-        colors: (storedColors ? JSON.parse(storedColors) : undefined) ?? DefaultColors
+        colors: (storedColors ? JSON.parse(storedColors) : undefined) ?? DefaultColors,
+        shapes: (storedShapes ? JSON.parse(storedShapes) : undefined) ?? DefaultShapes
       });
     }
   }

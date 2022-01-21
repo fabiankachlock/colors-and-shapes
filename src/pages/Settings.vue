@@ -19,6 +19,12 @@
             <ColorSelection />
           </div>
         </div>
+        <div class="row">
+          <p class="text-xl">{{ t('settings.shapes') }}</p>
+          <div class="ml-2">
+            <ShapeSelection />
+          </div>
+        </div>
       </main>
     </div>
   </div>
@@ -29,6 +35,7 @@ import LanguageSelection from '@/components/settings/LanguageSelection.vue';
 import { useI18n } from 'vue-i18n';
 import ThemeSwitch from '@/components/settings/ThemeSwitch.vue';
 import ColorSelection from '@/components/settings/ColorSelection.vue';
+import ShapeSelection from '@/components/settings/ShapeSelection.vue';
 
 const { t } = useI18n();
 </script>

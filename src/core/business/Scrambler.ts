@@ -1,7 +1,7 @@
 import { Card } from './Card';
 import { Color } from './Colors';
 import { shuffle } from './helper/shuffle';
-import { Shape } from './Shape';
+import { Shape } from './Shapes';
 
 export function CreatePairs(allowedColors: Color[], allowedShapes: Shape[], numberOfCards: number): Card[] {
   const availableCards: Card[] = [];
