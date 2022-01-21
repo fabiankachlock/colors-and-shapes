@@ -4,7 +4,7 @@
       <input
         type="checkbox"
         :checked="enabledMap[col]"
-        class="rounded text-blue-500 dark:text-blue-600 mx-2"
+        class="rounded text-lime-500 dark:text-green-600 mx-2"
         @change="evt => clickHandler(col, evt.target as HTMLInputElement)"
       />
       <p>{{ t('color.' + col) }}</p>
