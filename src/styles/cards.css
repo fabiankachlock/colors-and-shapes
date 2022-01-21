@@ -47,12 +47,20 @@
 }
 
 .s-square {
-	border: 5px solid var(--col);
+	background-color: var(--col);
+	clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
 	aspect-ratio: 1 / 1;
 }
 
 .s-circle {
-	border: 5px solid var(--col);
-	border-radius: 50%;
+	background-color: var(--col);
+	clip-path: circle(50% at 50% 50%);
+	aspect-ratio: 1 / 1;
+}
+
+.s-triangle {
+	background-color: var(--col);
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
 	aspect-ratio: 1 / 1;
 }
