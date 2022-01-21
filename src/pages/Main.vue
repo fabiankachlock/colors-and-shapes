@@ -23,7 +23,13 @@
         </div>
       </header>
       <main id="grid" class="grid w-full relative">
-        <Card v-for="card of cards" :card="card" :key="card.id" />
+        <Card
+          v-for="(card, index) of cards"
+          :card="card"
+          :order="index + 1"
+          :key="card.id"
+          @click="game.clickedCard(card)"
+        />
       </main>
     </div>
   </div>

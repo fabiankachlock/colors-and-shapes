@@ -57,6 +57,7 @@ export const useGame = defineStore('game', {
           this.setCardOpen(this.openCard!.id, false);
           this.setCardOpen(card.id, false);
         }
+        this.openCard = undefined;
       } else {
         this.openCard = card;
       }
