@@ -34,7 +34,7 @@ export const useConfig = defineStore('config', {
       language: 'en',
       shapes: DefaultShapes,
       colors: DefaultColors,
-      numberOfCard: 30 as number
+      numberOfCards: 30 as number
     };
   },
 

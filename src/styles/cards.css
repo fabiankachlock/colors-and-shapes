@@ -1,0 +1,58 @@
+.c-red {
+	--col: #c91508;
+}
+
+.c-green {
+	--col: #438c03;
+}
+
+.c-blue {
+	--col: #1848f5;
+}
+
+.c-yellow {
+	--col: #f1f514;
+}
+
+.c-black {
+	--col: #000;
+}
+
+.c-white {
+	--col: #fff;
+}
+
+.c-gray {
+	--col: #888;
+}
+
+.c-orange {
+	--col: #fc8e08;
+}
+
+.c-purple {
+	--col: #6608fc;
+}
+
+.c-pink {
+	--col: #e408fc;
+}
+
+.c-brown {
+	--col: #854701;
+}
+
+.c-sky-blue {
+	--col: #20aef5;
+}
+
+.s-square {
+	border: 5px solid var(--col);
+	aspect-ratio: 1 / 1;
+}
+
+.s-circle {
+	border: 5px solid var(--col);
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+}
