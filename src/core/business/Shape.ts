@@ -1,5 +1,5 @@
 export enum Shape {
-  Square,
-  Circle,
-  Triangle
+  Square = 'ssq',
+  Circle = 'sci',
+  Triangle = 'str'
 }

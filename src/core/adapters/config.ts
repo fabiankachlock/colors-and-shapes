@@ -1,5 +1,9 @@
 import { defaultLanguage, setI18nLanguage, supportedLanguages } from '@/core/frameworks/i18n';
 import { defineStore } from 'pinia';
+import { Card } from '../business/Card';
+import { Color } from '../business/Colors';
+import { toggleElement } from '../business/helper/toggleArrayElement';
+import { Shape } from '../business/Shape';
 
 const languageKey = '__$lng';
 const uiKey = '__$ui';
@@ -22,7 +26,10 @@ export const useConfig = defineStore('config', {
   state: () => {
     return {
       useDarkMode: false,
-      language: 'en'
+      language: 'en',
+      shapes: [] as Shape[],
+      colors: [] as Color[],
+      numberOfCard: 30 as number
     };
   },
 
@@ -34,6 +41,16 @@ export const useConfig = defineStore('config', {
     setLanguage(lng: string) {
       this.language = lng;
       changeLanguage(lng);
+    },
+    setColor(color: Color, enabled: boolean) {
+      this.$patch({
+        colors: toggleElement(this.colors, color, enabled)
+      });
+    },
+    setShape(shape: Shape, enabled: boolean) {
+      this.$patch({
+        shapes: toggleElement(this.shapes, shape, enabled)
+      });
     },
     configure() {
       let language = '';

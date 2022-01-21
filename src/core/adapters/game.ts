@@ -1,12 +1,13 @@
 import { defineStore } from 'pinia';
 import { Card } from '../business/Card';
 import { CreatePairs } from '../business/Scrambler';
+import { useConfig } from './config';
 
 export type DisplayCard = Card & {
   isOpen: boolean;
 };
 
-export const useConfig = defineStore('config', {
+export const useGame = defineStore('config', {
   state: () => {
     return {
       cards: [] as DisplayCard[],
@@ -16,7 +17,8 @@ export const useConfig = defineStore('config', {
 
   actions: {
     startGame() {
-      const newCards = CreatePairs([], [], 0); // TODO: use config values
+      const config = useConfig();
+      const newCards = CreatePairs(config.colors, config.shapes, config.numberOfCard);
       this.$patch({
         cards: newCards.map(c => ({
           ...c,
