@@ -3,10 +3,25 @@
 	"settings": {
 		"title": "Settings",
 		"language": "Language",
-		"darkmode": "Darkmode"
+		"darkmode": "Darkmode",
+		"colors": "Colors"
 	},
 	"lng": {
 		"de": "Deutsch",
 		"en": "English"
+	},
+	"color": {
+		"cre": "Red",
+		"cge": "Green",
+		"cbu": "Blue",
+		"cye": "Yellow",
+		"cba": "Black",
+		"cwh": "White",
+		"cga": "Gray",
+		"cor": "Orange",
+		"cpu": "Purple",
+		"cpi": "Pink",
+		"cbr": "Brown",
+		"csk": "Sky Blue"
 	}
 }

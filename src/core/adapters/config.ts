@@ -7,6 +7,9 @@ import { Shape } from '../business/Shape';
 
 const languageKey = '__$lng';
 const uiKey = '__$ui';
+const colorsKey = '__$colors';
+
+const DefaultColors = [...Object.values(Color)] as Color[];
 
 const changeLanguage = (lng: string) => {
   setI18nLanguage(lng);
@@ -28,7 +31,7 @@ export const useConfig = defineStore('config', {
       useDarkMode: false,
       language: 'en',
       shapes: [] as Shape[],
-      colors: [] as Color[],
+      colors: DefaultColors,
       numberOfCard: 30 as number
     };
   },
@@ -43,8 +46,10 @@ export const useConfig = defineStore('config', {
       changeLanguage(lng);
     },
     setColor(color: Color, enabled: boolean) {
+      const newColors = toggleElement(this.colors, color, enabled);
+      localStorage.setItem(colorsKey, JSON.stringify(newColors));
       this.$patch({
-        colors: toggleElement(this.colors, color, enabled)
+        colors: newColors
       });
     },
     setShape(shape: Shape, enabled: boolean) {
@@ -69,9 +74,12 @@ export const useConfig = defineStore('config', {
         : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       changeUIMode(storedDarkMode);
 
+      const storedColors = localStorage.getItem(colorsKey);
+
       this.$patch({
         useDarkMode: storedDarkMode,
-        language: language
+        language: language,
+        colors: (storedColors ? JSON.parse(storedColors) : undefined) ?? DefaultColors
       });
     }
   }

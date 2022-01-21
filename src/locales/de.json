@@ -3,10 +3,25 @@
 	"settings": {
 		"title": "Einstellungen",
 		"language": "Sprache",
-		"darkmode": "Dunkler Modus"
+		"darkmode": "Dunkler Modus",
+		"colors": "Farben"
 	},
 	"lng": {
 		"de": "Deutsch",
 		"en": "English"
+	},
+	"color": {
+		"cre": "Rot",
+		"cge": "Grün",
+		"cbu": "Blau",
+		"cye": "Gelb",
+		"cba": "Schwarz",
+		"cwh": "Weiß",
+		"cga": "Grau",
+		"cor": "Orange",
+		"cpu": "Lila",
+		"cpi": "Rosa",
+		"cbr": "Braun",
+		"csk": "Himmelblau"
 	}
 }
