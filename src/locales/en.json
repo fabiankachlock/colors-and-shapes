@@ -1,3 +1,11 @@
 {
-	"title": "Colors"
+	"title": "Colors",
+	"settings": {
+		"title": "Settings",
+		"language": "Language"
+	},
+	"lng": {
+		"de": "Deutsch",
+		"en": "English"
+	}
 }
