@@ -10,6 +10,7 @@ h5,
 h6,
 p,
 span,
+button,
 a {
 	@apply text-gray-800 dark:text-gray-200;
 }
