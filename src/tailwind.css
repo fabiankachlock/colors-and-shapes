@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+.main-text {
+	@apply text-text-light dark:text-text-dark;
+}
+
+.main-bg {
+	@apply bg-main-light dark:bg-main-dark;
+}
+
+.main-border {
+	@apply border-text-light dark:border-text-dark;
+}
+
+.primary-bg {
+	@apply bg-primary-light dark:bg-primary-dark;
+}
+
+.primary-text {
+	@apply text-primary-light dark:text-primary-dark;
+}
+
+.primary-border {
+	@apply border-primary-light dark:border-primary-dark;
+}
+
+.secondary-bg {
+	@apply bg-secondary-light dark:bg-secondary-dark;
+}
+
+.secondary-text {
+	@apply text-secondary-light dark:text-secondary-dark;
+}
+
+.secondary-border {
+	@apply border-secondary-light dark:border-secondary-dark;
+}
