@@ -44,11 +44,17 @@ export const useGame = defineStore('game', {
     startGame() {
       const config = useConfig();
       const newCards = CreatePairs(config.colors, config.shapes, config.numberOfCards);
+      if (this.timeOut) {
+        clearTimeout(this.timeOut);
+      }
       this.$patch({
         cards: newCards.map(c => ({
           ...c,
           isOpen: false
-        }))
+        })),
+        openCard: undefined,
+        secondOpenCard: undefined,
+        timeOut: undefined
       });
     },
     updateOpenCards() {
