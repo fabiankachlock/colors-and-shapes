@@ -59,7 +59,7 @@ export const useGame = defineStore('game', {
     },
     updateOpenCards() {
       if (this.openCard && this.secondOpenCard) {
-        const fits = Card.equals(this.openCard, this.secondOpenCard);
+        const fits = Card.equals(this.openCard, this.secondOpenCard) && this.openCard.id !== this.secondOpenCard.id;
         if (!fits) {
           this.setCardOpen(this.secondOpenCard.id, false);
           this.setCardOpen(this.openCard.id, false);
@@ -73,6 +73,8 @@ export const useGame = defineStore('game', {
       }
     },
     clickedCard(card: DisplayCard) {
+      if (card.id === this.openCard?.id) return;
+
       this.setCardOpen(card.id, true);
       if (this.openCard && this.secondOpenCard) {
         this.updateOpenCards();
