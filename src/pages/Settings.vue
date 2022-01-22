@@ -1,4 +1,5 @@
 <template>
+  <Copyright />
   <div class="min-w-full overflow-x-hidden overflow-y-scroll bg-zinc-100 dark:bg-zinc-800 full-height">
     <div class="px-4 py-2">
       <header class="w-full my-6">
@@ -50,6 +51,7 @@ import ThemeSwitch from '@/components/settings/ThemeSwitch.vue';
 import ColorSelection from '@/components/settings/ColorSelection.vue';
 import ShapeSelection from '@/components/settings/ShapeSelection.vue';
 import CardAmountSelection from '@/components/settings/CardAmountSelection.vue';
+import Copyright from '@/components/Copyright.vue';
 
 const { t } = useI18n();
 </script>

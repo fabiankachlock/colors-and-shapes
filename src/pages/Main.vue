@@ -1,4 +1,5 @@
 <template>
+  <Copyright />
   <div id="main" class="min-w-full overflow-hidden overflow bg-zinc-100 dark:bg-zinc-800 full-height p-4">
     <div class="relative grid wrapper w-full h-full max-h-full">
       <header class="my-2 w-full flex flex-row justify-between items-start">
@@ -51,6 +52,7 @@ import { CreateGridRaster } from '@/core/business/helper/gridCalculator';
 import { useGame } from '@/core/adapters/game';
 import { useConfig } from '@/core/adapters/config';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
+import Copyright from '@/components/Copyright.vue';
 
 const { t } = useI18n();
 
