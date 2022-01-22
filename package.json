@@ -1,7 +1,17 @@
 {
-	"name": "vokabulary-memory-trainer",
+	"name": "colors-and-shapes",
 	"version": "0.0.0",
 	"license": "MIT",
+	"homepage": "https://github.com/fabiankachlock/colors-and-shapes",
+	"description": "A tiny web game for enhancing school lessons.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fabiankachlock/colors-and-shapes.git"
+	},
+	"engines": {
+		"node": ">14",
+		"yarn": ">=1 <2"
+	},
 	"scripts": {
 		"dev": "vite",
 		"build": "vue-tsc --noEmit && vite build",
