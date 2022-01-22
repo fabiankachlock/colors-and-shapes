@@ -34,7 +34,9 @@ export const useGame = defineStore('game', {
   state: () => {
     return {
       cards: [] as DisplayCard[],
-      openCard: undefined as DisplayCard | undefined
+      openCard: undefined as DisplayCard | undefined,
+      secondOpenCard: undefined as DisplayCard | undefined,
+      timeOut: undefined as number | undefined
     };
   },
 
@@ -49,15 +51,34 @@ export const useGame = defineStore('game', {
         }))
       });
     },
+    updateOpenCards() {
+      if (this.openCard && this.secondOpenCard) {
+        const fits = Card.equals(this.openCard, this.secondOpenCard);
+        if (!fits) {
+          this.setCardOpen(this.secondOpenCard.id, false);
+          this.setCardOpen(this.openCard.id, false);
+        }
+        this.secondOpenCard = undefined;
+        this.openCard = undefined;
+        if (this.timeOut) {
+          clearTimeout(this.timeOut);
+          this.timeOut = undefined;
+        }
+      }
+    },
     clickedCard(card: DisplayCard) {
       this.setCardOpen(card.id, true);
-      if (this.openCard) {
-        const fits = Card.equals(this.openCard, card);
-        if (!fits) {
-          this.setCardOpen(this.openCard!.id, false);
-          this.setCardOpen(card.id, false);
-        }
-        this.openCard = undefined;
+      if (this.openCard && this.secondOpenCard) {
+        this.updateOpenCards();
+      }
+      if (this.openCard && !this.secondOpenCard) {
+        this.secondOpenCard = card;
+        this.timeOut = setTimeout(() => {
+          if (this.timeOut) {
+            this.updateOpenCards();
+          }
+          this.timeOut = undefined;
+        }, 2000) as unknown as number;
       } else {
         this.openCard = card;
       }
