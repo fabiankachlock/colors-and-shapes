@@ -5,7 +5,7 @@
         <div class="flex flex-eow flex-nowrap justify-between items-center">
           <h1 class="text-5xl">{{ t('settings.title') }}</h1>
           <div class="w-12 h-12 bg-gray-300 dark:bg-gray-700 rounded-full grid place-items-center">
-            <router-link to="/" class="text-3xl">
+            <router-link to="/" class="text-3xl transform mr-1 transition-transform hover:-translate-x-1">
               <i-ri-arrow-left-s-line />
             </router-link>
           </div>

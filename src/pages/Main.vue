@@ -4,7 +4,9 @@
       <header class="my-2 w-full flex flex-row justify-between items-start">
         <h1 class="text-3xl">{{ t('title') }}</h1>
         <div class="flex flex-row flex-wrap justify-end">
-          <div class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-2">
+          <div
+            class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-2 transform transition-transform hover:scale-95"
+          >
             <button class="flex flex-row flex-nowrap items-center" @click="refresh">
               <div
                 class="mr-2 text-xl transform transition-transform duration-500"
@@ -17,7 +19,9 @@
               </span>
             </button>
           </div>
-          <div class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-2">
+          <div
+            class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-2 transform transition-transform hover:scale-95"
+          >
             <router-link to="settings" class="flex flex-row flex-nowrap items-center">
               <i-ri-settings-5-fill class="mr-2 text-xl" />
               <span class="text-xl">
