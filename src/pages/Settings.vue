@@ -32,6 +32,12 @@
             <ShapeSelection />
           </div>
         </div>
+        <div class="row">
+          <p class="text-xl">{{ t('settings.cardAmount') }}</p>
+          <div class="ml-2">
+            <CardAmountSelection />
+          </div>
+        </div>
       </main>
     </div>
   </div>
@@ -43,6 +49,7 @@ import { useI18n } from 'vue-i18n';
 import ThemeSwitch from '@/components/settings/ThemeSwitch.vue';
 import ColorSelection from '@/components/settings/ColorSelection.vue';
 import ShapeSelection from '@/components/settings/ShapeSelection.vue';
+import CardAmountSelection from '@/components/settings/CardAmountSelection.vue';
 
 const { t } = useI18n();
 </script>

@@ -6,7 +6,8 @@
 		"language": "Sprache",
 		"darkmode": "Dunkler Modus",
 		"colors": "Farben",
-		"shapes": "Formen"
+		"shapes": "Formen",
+		"cardAmount": "Anzahl an Karten"
 	},
 	"lng": {
 		"de": "Deutsch",

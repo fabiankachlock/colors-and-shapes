@@ -6,7 +6,8 @@
 		"language": "Language",
 		"darkmode": "Darkmode",
 		"colors": "Colors",
-		"shapes": "Shapes"
+		"shapes": "Shapes",
+		"cardAmount": "Card Amount"
 	},
 	"lng": {
 		"de": "Deutsch",

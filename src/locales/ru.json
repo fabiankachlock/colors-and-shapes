@@ -6,7 +6,8 @@
 		"language": "Язык",
 		"darkmode": "Темный Режим",
 		"colors": "Цвета",
-		"shapes": "Формировать"
+		"shapes": "Формировать",
+		"cardAmount": "Сумма Карты"
 	},
 	"lng": {
 		"de": "Deutsch",

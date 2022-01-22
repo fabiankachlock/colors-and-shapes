@@ -9,6 +9,7 @@ const languageKey = '__$lng';
 const uiKey = '__$ui';
 const colorsKey = '__$colors';
 const shapesKey = '__$shapes';
+const cardAmountKey = '__$cardAmount';
 
 const DefaultColors = [...Object.values(Color)] as Color[];
 const DefaultShapes = [...Object.values(Shape)] as Shape[];
@@ -47,6 +48,10 @@ export const useConfig = defineStore('config', {
       this.language = lng;
       changeLanguage(lng);
     },
+    setCardAmount(amount: number) {
+      this.numberOfCards = amount;
+      localStorage.setItem(cardAmountKey, amount.toString());
+    },
     setColor(color: Color, enabled: boolean) {
       const newColors = toggleElement(this.colors, color, enabled);
       localStorage.setItem(colorsKey, JSON.stringify(newColors));
@@ -80,12 +85,14 @@ export const useConfig = defineStore('config', {
 
       const storedColors = localStorage.getItem(colorsKey);
       const storedShapes = localStorage.getItem(shapesKey);
+      const storedAmount = localStorage.getItem(cardAmountKey);
 
       this.$patch({
         useDarkMode: storedDarkMode,
         language: language,
         colors: (storedColors ? JSON.parse(storedColors) : undefined) ?? DefaultColors,
-        shapes: (storedShapes ? JSON.parse(storedShapes) : undefined) ?? DefaultShapes
+        shapes: (storedShapes ? JSON.parse(storedShapes) : undefined) ?? DefaultShapes,
+        numberOfCards: parseInt(storedAmount ?? '30', 10) ?? 30
       });
     }
   }
