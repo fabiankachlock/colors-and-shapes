@@ -59,13 +59,17 @@ export const useGame = defineStore('game', {
     },
     updateOpenCards() {
       if (this.openCard && this.secondOpenCard) {
+        // check if cards are a valid pair
         const fits = Card.equals(this.openCard, this.secondOpenCard) && this.openCard.id !== this.secondOpenCard.id;
         if (!fits) {
+          // close them, when they aren't
           this.setCardOpen(this.secondOpenCard.id, false);
           this.setCardOpen(this.openCard.id, false);
         }
+        // reset variables
         this.secondOpenCard = undefined;
         this.openCard = undefined;
+        // clear timeout
         if (this.timeOut) {
           clearTimeout(this.timeOut);
           this.timeOut = undefined;
@@ -73,21 +77,28 @@ export const useGame = defineStore('game', {
       }
     },
     clickedCard(card: DisplayCard) {
-      if (card.id === this.openCard?.id) return;
+      if (card.id === this.openCard?.id || card.id === this.secondOpenCard?.id || card.isOpen) return;
 
+      // turn card to open side
       this.setCardOpen(card.id, true);
       if (this.openCard && this.secondOpenCard) {
+        // hide open cards if needed
         this.updateOpenCards();
       }
       if (this.openCard && !this.secondOpenCard) {
+        // second card selected
         this.secondOpenCard = card;
+        // init timeout for automatically closing the cards
         this.timeOut = setTimeout(() => {
+          // check, if the timeout has already been cleared
           if (this.timeOut) {
             this.updateOpenCards();
           }
+          // reset timeout
           this.timeOut = undefined;
         }, 2000) as unknown as number;
-      } else {
+      } else if (!this.openCard && !this.secondOpenCard) {
+        // first card selected
         this.openCard = card;
       }
     },
