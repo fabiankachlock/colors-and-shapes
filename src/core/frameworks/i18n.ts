@@ -1,7 +1,7 @@
 import { nextTick } from 'vue';
 import { createI18n } from 'vue-i18n';
 
-export const supportedLanguages = ['en', 'de'];
+export const supportedLanguages = ['en', 'de', 'ru'];
 export const defaultLanguage = 'en';
 
 const _i18n = createI18n({
