@@ -9,7 +9,7 @@
       <div class="card-face card-front p-4 bg-sky-200 dark:bg-slate-700 cursor-pointer rounded-lg">
         <div class="w-full h-full grid place-items-center" :class="ColorMap[card.color]">
           <div>
-            <p class="text-xl sm:text-4xl">
+            <p class="text-xl sm:text-2xl lg:text-4xl">
               {{ order }}
             </p>
           </div>
