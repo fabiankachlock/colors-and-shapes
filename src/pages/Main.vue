@@ -6,9 +6,14 @@
         <div class="flex flex-row flex-wrap justify-end">
           <div class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-2">
             <button class="flex flex-row flex-nowrap items-center" @click="refresh">
-              <i-ri-refresh-line class="mr-2 text-xl" />
+              <div
+                class="mr-2 text-xl transform transition-transform duration-500"
+                :class="{ 'rotate-180': isRefreshing }"
+              >
+                <i-ri-refresh-line />
+              </div>
               <span class="text-xl">
-                {{ t('settings.title') }}
+                {{ t('refresh') }}
               </span>
             </button>
           </div>
@@ -39,10 +44,9 @@
 import { useI18n } from 'vue-i18n';
 import Card from '@/components/game/Card.vue';
 import { CreateGridRaster } from '@/core/business/helper/gridCalculator';
-import { DisplayCard, useGame } from '@/core/adapters/game';
+import { useGame } from '@/core/adapters/game';
 import { useConfig } from '@/core/adapters/config';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
-import { CreatePairs } from '@/core/business/Scrambler';
 
 const { t } = useI18n();
 
@@ -51,6 +55,7 @@ const config = useConfig();
 const rows = ref(0);
 const cols = ref(0);
 const cards = computed(() => game.cards);
+const isRefreshing = ref(false);
 
 onMounted(() => {
   window.addEventListener('resize', sizeGrid);
@@ -69,7 +74,13 @@ const sizeGrid = () => {
 };
 
 const refresh = () => {
-  game.startGame();
+  if (!isRefreshing.value) {
+    game.startGame();
+    isRefreshing.value = true;
+    setTimeout(() => {
+      isRefreshing.value = false;
+    }, 500);
+  }
 };
 </script>
 
