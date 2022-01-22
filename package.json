@@ -42,6 +42,7 @@
 		"vite": "^2.7.2",
 		"vite-plugin-components": "^0.13.3",
 		"vite-plugin-icons": "^0.6.5",
+		"vite-plugin-pwa": "^0.11.13",
 		"vue-tsc": "^0.29.8"
 	}
 }
