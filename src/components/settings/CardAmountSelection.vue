@@ -3,7 +3,7 @@
     <p class="mr-4 w-6">{{ amount }}</p>
     <input
       type="range"
-      class="rounded-lg overflow-hidden appearance-none bg-lime-300 dark:bg-green-300 h-4 w-128"
+      class="rounded-lg overflow-hidden appearance-none h-4 w-128"
       min="2"
       max="72"
       step="2"
@@ -29,6 +29,13 @@ watch(amount, cardAmount => {
 </script>
 
 <style>
+input[type='range'] {
+  background-color: #84cc1660; /* lime-500 + opacity */
+}
+
+.dark input[type='range'] {
+  background-color: #16a34a40; /* green-600 + opacity */
+}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   input[type='range']::-webkit-slider-thumb {
     width: 15px;
