@@ -39,6 +39,12 @@
             <CardAmountSelection />
           </div>
         </div>
+        <div class="row">
+          <p class="text-xl">{{ t('settings.cardTimeout') }}</p>
+          <div class="ml-2">
+            <CardTimeoutSlider />
+          </div>
+        </div>
       </main>
     </div>
   </div>
@@ -52,6 +58,7 @@ import ColorSelection from '@/components/settings/ColorSelection.vue';
 import ShapeSelection from '@/components/settings/ShapeSelection.vue';
 import CardAmountSelection from '@/components/settings/CardAmountSelection.vue';
 import Copyright from '@/components/Copyright.vue';
+import CardTimeoutSlider from '@/components/settings/CardTimeoutSlider.vue';
 
 const { t } = useI18n();
 </script>

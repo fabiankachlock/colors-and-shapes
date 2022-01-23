@@ -7,7 +7,8 @@
 		"darkmode": "Темный Режим",
 		"colors": "Цвета",
 		"shapes": "Формировать",
-		"cardAmount": "Сумма Карты"
+		"cardAmount": "Сумма Карты",
+		"cardTimeout": "Время Открытой Карты"
 	},
 	"lng": {
 		"de": "Deutsch",

@@ -7,7 +7,8 @@
 		"darkmode": "Dunkler Modus",
 		"colors": "Farben",
 		"shapes": "Formen",
-		"cardAmount": "Anzahl an Karten"
+		"cardAmount": "Anzahl an Karten",
+		"cardTimeout": "Dauer offener Karten"
 	},
 	"lng": {
 		"de": "Deutsch",

@@ -1,13 +1,13 @@
 <template>
   <div class="flex flex-row justify-start items-center">
-    <p class="mr-4 w-10">{{ amount }}</p>
+    <p class="mr-4 w-10">{{ Math.round(timeout / 1000) }} s</p>
     <input
       type="range"
       class="rounded-lg overflow-hidden appearance-none h-4 w-128"
-      min="2"
-      max="72"
-      step="2"
-      v-model="amount"
+      min="1000"
+      max="60000"
+      step="1000"
+      v-model="timeout"
     />
   </div>
 </template>
@@ -17,13 +17,13 @@ import { useConfig } from '@/core/adapters/config';
 import { onMounted, ref, watch } from 'vue';
 
 const config = useConfig();
-const amount = ref(0);
+const timeout = ref(0);
 
 onMounted(() => {
-  amount.value = config.numberOfCards;
+  timeout.value = config.cardTimeout;
 });
 
-watch(amount, cardAmount => {
-  config.setCardAmount(cardAmount);
+watch(timeout, cardTimeout => {
+  config.setCardTimeout(cardTimeout);
 });
 </script>

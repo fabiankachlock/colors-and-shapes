@@ -1,6 +1,5 @@
 import { defaultLanguage, setI18nLanguage, supportedLanguages } from '@/core/frameworks/i18n';
 import { defineStore } from 'pinia';
-import { Card } from '../business/Card';
 import { Color } from '../business/Colors';
 import { toggleElement } from '../business/helper/toggleArrayElement';
 import { Shape } from '../business/Shapes';
@@ -10,6 +9,7 @@ const uiKey = '__$ui';
 const colorsKey = '__$colors';
 const shapesKey = '__$shapes';
 const cardAmountKey = '__$cardAmount';
+const cardTimeoutKey = '__$cardTimeout';
 
 const DefaultColors = [...Object.values(Color)] as Color[];
 const DefaultShapes = [...Object.values(Shape)] as Shape[];
@@ -35,7 +35,8 @@ export const useConfig = defineStore('config', {
       language: 'en',
       shapes: DefaultShapes,
       colors: DefaultColors,
-      numberOfCards: 30 as number
+      numberOfCards: 30 as number,
+      cardTimeout: 2000 as number
     };
   },
 
@@ -51,6 +52,10 @@ export const useConfig = defineStore('config', {
     setCardAmount(amount: number) {
       this.numberOfCards = amount;
       localStorage.setItem(cardAmountKey, amount.toString());
+    },
+    setCardTimeout(timeout: number) {
+      this.cardTimeout = timeout;
+      localStorage.setItem(cardTimeoutKey, timeout.toString());
     },
     setColor(color: Color, enabled: boolean) {
       const newColors = toggleElement(this.colors, color, enabled);
@@ -86,13 +91,15 @@ export const useConfig = defineStore('config', {
       const storedColors = localStorage.getItem(colorsKey);
       const storedShapes = localStorage.getItem(shapesKey);
       const storedAmount = localStorage.getItem(cardAmountKey);
+      const storedTimeout = localStorage.getItem(cardTimeoutKey);
 
       this.$patch({
         useDarkMode: storedDarkMode,
         language: language,
         colors: (storedColors ? JSON.parse(storedColors) : undefined) ?? DefaultColors,
         shapes: (storedShapes ? JSON.parse(storedShapes) : undefined) ?? DefaultShapes,
-        numberOfCards: parseInt(storedAmount ?? '30', 10) ?? 30
+        numberOfCards: parseInt(storedAmount ?? '30', 10) ?? 30,
+        cardTimeout: parseInt(storedTimeout ?? '2000', 10) ?? 30
       });
     }
   }

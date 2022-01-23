@@ -89,6 +89,7 @@ export const useGame = defineStore('game', {
         // second card selected
         this.secondOpenCard = card;
         // init timeout for automatically closing the cards
+        const config = useConfig();
         this.timeOut = setTimeout(() => {
           // check, if the timeout has already been cleared
           if (this.timeOut) {
@@ -96,7 +97,7 @@ export const useGame = defineStore('game', {
           }
           // reset timeout
           this.timeOut = undefined;
-        }, 2000) as unknown as number;
+        }, config.cardTimeout) as unknown as number;
       } else if (!this.openCard && !this.secondOpenCard) {
         // first card selected
         this.openCard = card;
