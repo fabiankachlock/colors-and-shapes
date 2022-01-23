@@ -65,7 +65,8 @@ export default defineConfig({
     })
   ],
   define: {
-    'process.env.BASE_URL': process.env.VITE_BASE_URL
+    BASE_URL: process.env.VITE_BASE_URL,
+    APP_VERSION: JSON.stringify(process.env.npm_package_version)
   },
   resolve: {
     alias: {
