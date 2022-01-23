@@ -3,10 +3,10 @@
   <div id="main" class="min-w-full overflow-hidden overflow bg-zinc-100 dark:bg-zinc-800 full-height p-4">
     <div class="relative grid wrapper w-full h-full max-h-full">
       <header class="my-2 w-full flex flex-row justify-between items-start">
-        <h1 class="text-3xl">{{ t('title') }}</h1>
+        <h1 class="text-3xl my-1">{{ t('title') }}</h1>
         <div class="flex flex-row flex-wrap justify-end">
           <div
-            class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-2 transform transition-transform hover:scale-95"
+            class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-1 transform transition-transform hover:scale-95"
           >
             <button class="flex flex-row flex-nowrap items-center" @click="refresh">
               <div
@@ -21,7 +21,7 @@
             </button>
           </div>
           <div
-            class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-2 transform transition-transform hover:scale-95"
+            class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-1 transform transition-transform hover:scale-95"
           >
             <router-link to="settings" class="flex flex-row flex-nowrap items-center">
               <i-ri-settings-5-fill class="mr-2 text-xl" />
