@@ -27,35 +27,3 @@ watch(amount, cardAmount => {
   config.setCardAmount(cardAmount);
 });
 </script>
-
-<style>
-input[type='range'] {
-  background-color: #84cc1660; /* lime-500 + opacity */
-}
-
-.dark input[type='range'] {
-  background-color: #16a34a40; /* green-600 + opacity */
-}
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type='range']::-webkit-slider-thumb {
-    width: 15px;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 15px;
-    cursor: ew-resize;
-    background: #1f2937; /* gray-800 */
-    box-shadow: -405px 0 0 400px #84cc16; /* lime-500 */
-    border-radius: 50%;
-  }
-  .dark input[type='range']::-webkit-slider-thumb {
-    width: 15px;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 15px;
-    cursor: ew-resize;
-    background: #e5e7eb; /* gray-200 */
-    box-shadow: -405px 0 0 400px #16a34a; /* green-600 */
-    border-radius: 50%;
-  }
-}
-</style>

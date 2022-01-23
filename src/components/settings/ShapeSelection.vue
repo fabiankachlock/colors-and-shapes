@@ -4,7 +4,6 @@
       <input
         type="checkbox"
         :checked="enabledMap[shape]"
-        class="rounded text-lime-500 dark:text-green-600 mx-2 cursor-pointer"
         @change="evt => clickHandler(shape, evt.target as HTMLInputElement)"
       />
       <p>{{ t('shape.' + shape) }}</p>
