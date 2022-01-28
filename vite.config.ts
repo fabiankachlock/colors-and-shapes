@@ -6,20 +6,6 @@ import components from 'vite-plugin-components';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
-// https://gun.eco/docs/Vite
-const moduleExclude = match => {
-  const m = id => id.indexOf(match) > -1;
-  return {
-    name: `exclude-${match}`,
-    resolveId(id) {
-      if (m(id)) return id;
-    },
-    load(id) {
-      if (m(id)) return `export default {}`;
-    }
-  };
-};
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -28,14 +14,19 @@ export default defineConfig({
       compositionOnly: true,
       include: path.resolve(__dirname, './src/locales/**')
     }),
-    moduleExclude('text-encoding'),
     components({
       customComponentResolvers: ViteIconsResolver()
     }),
     icons(),
     VitePWA({
-      registerType: 'autoUpdate',
-      includeAssets: ['/logo.png'],
+      scope: '/',
+      includeAssets: ['/logo.png', 'icons/*.png', 'icons/*.svg', 'icons/*.xml', 'icons/*.ico', 'robots.txt'],
+      devOptions: {
+        enabled: true
+      },
+      workbox: {
+        cleanupOutdatedCaches: true
+      },
       manifest: {
         name: 'Colors & Shapes',
         short_name: 'Colors',
@@ -45,17 +36,17 @@ export default defineConfig({
         background_color: '#1e293b',
         icons: [
           {
-            src: '/logo.png',
+            src: 'icons/pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/logo.png',
+            src: 'icons/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: '/logo.png',
+            src: 'icons/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
