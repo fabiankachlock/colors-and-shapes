@@ -40,6 +40,7 @@ const { card, order } = toRefs(props);
 .card {
   transition: transform 1s;
   transform-style: preserve-3d;
+  -moz-backface-visibility: hidden;
 }
 
 .card-face {
