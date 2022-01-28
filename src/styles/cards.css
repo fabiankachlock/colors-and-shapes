@@ -23,7 +23,7 @@
 }
 
 .c-gray {
-	--col: #888;
+	--col: #999;
 }
 
 .c-orange {
@@ -31,11 +31,11 @@
 }
 
 .c-purple {
-	--col: #6608fc;
+	--col: #5602dd;
 }
 
 .c-pink {
-	--col: #e408fc;
+	--col: #e837fc;
 }
 
 .c-brown {
@@ -43,7 +43,7 @@
 }
 
 .c-sky-blue {
-	--col: #20aef5;
+	--col: #0aacfd;
 }
 
 .s-square {
