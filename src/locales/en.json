@@ -8,7 +8,7 @@
 		"colors": "Colors",
 		"shapes": "Shapes",
 		"cardAmount": "Card Amount",
-		"cardTimeout": "Open Card Time"
+		"cardTimeout": "Open Card Duration"
 	},
 	"lng": {
 		"de": "Deutsch",

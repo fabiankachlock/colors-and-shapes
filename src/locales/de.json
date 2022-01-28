@@ -8,7 +8,7 @@
 		"colors": "Farben",
 		"shapes": "Formen",
 		"cardAmount": "Anzahl an Karten",
-		"cardTimeout": "Dauer offener Karten"
+		"cardTimeout": "Offene Kartendauer"
 	},
 	"lng": {
 		"de": "Deutsch",
