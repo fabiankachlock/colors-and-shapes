@@ -15,6 +15,10 @@
 		"en": "English",
 		"ru": "Русский"
 	},
+	"game": {
+		"fit": "Passt!",
+		"noFit": "Passt nicht!"
+	},
 	"color": {
 		"cre": "Rot",
 		"cge": "Grün",

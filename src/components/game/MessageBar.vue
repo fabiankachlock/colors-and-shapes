@@ -12,8 +12,10 @@
 <script setup lang="ts">
 import { useMessages } from '@/core/adapters/messages';
 import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const messages = useMessages();
+const { t } = useI18n();
 
-const message = computed(() => messages.message);
+const message = computed(() => t(messages.message));
 </script>

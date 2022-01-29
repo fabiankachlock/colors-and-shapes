@@ -15,6 +15,10 @@
 		"en": "English",
 		"ru": "Русский"
 	},
+	"game": {
+		"fit": "Match!",
+		"noFit": "No match!"
+	},
 	"color": {
 		"cre": "Red",
 		"cge": "Green",

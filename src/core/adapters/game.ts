@@ -91,7 +91,7 @@ export const useGame = defineStore('game', {
         this.secondOpenCard = card;
         // check if fits;
         const fits = Card.equals(this.openCard, this.secondOpenCard) && this.openCard.id !== this.secondOpenCard.id;
-        useMessages().emitMessage(fits ? 'passt' : 'passt nicht');
+        useMessages().emitMessage(fits ? 'game.fit' : 'game.noFit');
 
         // init timeout for automatically closing the cards
         const config = useConfig();
