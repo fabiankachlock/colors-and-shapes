@@ -1,8 +1,8 @@
 import { defaultLanguage, setI18nLanguage, supportedLanguages } from '@/core/frameworks/i18n';
 import { defineStore } from 'pinia';
-import { Color } from '../business/Colors';
+import { Color } from '../use-cases/colors/Colors';
 import { toggleElement } from '../business/helper/toggleArrayElement';
-import { Shape } from '../business/Shapes';
+import { Shape } from '../use-cases/colors/Shapes';
 
 const languageKey = '__$lng';
 const uiKey = '__$ui';

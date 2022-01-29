@@ -21,8 +21,8 @@
 		"noFit": "Не подходит!"
 	},
 	"gameMode": {
-		"colors": "Цвета",
-		"clothes": "Одежда"
+		"@colors": "Цвета",
+		"@clothes": "Одежда"
 	},
 	"color": {
 		"cre": "Красный",

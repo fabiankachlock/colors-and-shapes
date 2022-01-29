@@ -51,7 +51,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 import Card from '@/components/game/Card.vue';
-import { CreateGridRaster } from '@/core/business/helper/gridCalculator';
+import { createGridRaster } from '@/core/business/helper/gridCalculator';
 import { useGame } from '@/core/adapters/game';
 import { useConfig } from '@/core/adapters/config';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
@@ -78,7 +78,7 @@ onUnmounted(() => {
 });
 
 const sizeGrid = () => {
-  const grid = CreateGridRaster(window.innerWidth, window.innerHeight, config.numberOfCards);
+  const grid = createGridRaster(window.innerWidth, window.innerHeight, config.numberOfCards);
   rows.value = grid.rows;
   cols.value = grid.cols;
 };

@@ -21,7 +21,7 @@ import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 const config = useConfig();
-const gameModes = Object.keys(GameMode);
+const gameModes = Object.values(GameMode);
 const selection = ref<HTMLSelectElement>();
 const selectedGameMode = computed(() => config.gameMode);
 

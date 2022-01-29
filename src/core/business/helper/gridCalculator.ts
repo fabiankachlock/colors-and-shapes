@@ -1,4 +1,4 @@
-export function CreateGridRaster(width: number, height: number, numberOfCards: number): { cols: number; rows: number } {
+export function createGridRaster(width: number, height: number, numberOfCards: number): { cols: number; rows: number } {
   const aspectRatio = width / height;
   const getCols = (rows: number) => Math.ceil(rows * aspectRatio);
   const getRows = (cols: number) => Math.ceil(cols / aspectRatio);

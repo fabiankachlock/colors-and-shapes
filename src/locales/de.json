@@ -21,8 +21,8 @@
 		"noFit": "Passt nicht!"
 	},
 	"gameMode": {
-		"colors": "Farben",
-		"clothes": "Kleidung"
+		"@colors": "Farben",
+		"@clothes": "Kleidung"
 	},
 	"color": {
 		"cre": "Rot",

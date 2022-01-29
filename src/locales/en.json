@@ -21,8 +21,8 @@
 		"noFit": "No match!"
 	},
 	"gameMode": {
-		"colors": "Colors",
-		"clothes": "Clothes"
+		"@colors": "Colors",
+		"@clothes": "Clothes"
 	},
 	"color": {
 		"cre": "Red",

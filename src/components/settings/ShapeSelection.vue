@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { useConfig } from '@/core/adapters/config';
-import { Shape } from '@/core/business/Shapes';
+import { Shape } from '@/core/use-cases/colors/Shapes';
 import { onMounted, Ref, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 

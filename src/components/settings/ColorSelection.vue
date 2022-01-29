@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { useConfig } from '@/core/adapters/config';
-import { Color } from '@/core/business/Colors';
+import { Color } from '@/core/use-cases/colors/Colors';
 import { onMounted, Ref, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 

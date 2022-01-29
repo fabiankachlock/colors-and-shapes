@@ -2,17 +2,15 @@
   <div class="scene relative m-1">
     <div class="card w-full h-full" :class="{ 'is-flipped': card.isOpen }">
       <div class="card-face card-back p-4 bg-sky-200 dark:bg-slate-700 cursor-pointer rounded-lg">
-        <div class="w-full h-full grid place-items-center" :class="ColorMap[card.color]">
-          <div :class="ShapeMap[card.shape]" class="max-h-full h-full max-w-full"></div>
+        <div class="card-content w-full h-full grid place-items-center" :class="card.getBackDescriptor()">
+          <div class="card-inner max-h-full h-full max-w-full"></div>
         </div>
       </div>
       <div class="card-face card-front p-4 bg-sky-200 dark:bg-slate-700 cursor-pointer rounded-lg">
-        <div class="w-full h-full grid place-items-center" :class="ColorMap[card.color]">
-          <div>
-            <p class="text-xl sm:text-2xl lg:text-4xl">
-              {{ order }}
-            </p>
-          </div>
+        <div class="w-full h-full grid place-items-center" :class="card.getFrontDescriptor()">
+          <p class="card-inner text-xl sm:text-2xl lg:text-4xl">
+            {{ order }}
+          </p>
         </div>
       </div>
     </div>
@@ -20,16 +18,17 @@
 </template>
 
 <script setup lang="ts">
-import { DisplayCard, ShapeMap, ColorMap } from '@/core/adapters/game';
+import { DisplayCard } from '@/core/adapters/game/DisplayCard';
 import { toRefs } from 'vue';
-import '@/styles/cards.css';
+import { useConfig } from '@/core/adapters/config';
 
 const props = defineProps<{
-  card: DisplayCard;
+  card: DisplayCard<unknown>;
   order: number;
 }>();
 
 const { card, order } = toRefs(props);
+const config = useConfig();
 </script>
 
 <style>

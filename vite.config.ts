@@ -21,9 +21,6 @@ export default defineConfig({
     VitePWA({
       scope: '/',
       includeAssets: ['/logo.png', 'icons/*.png', 'icons/*.svg', 'icons/*.xml', 'icons/*.ico', 'robots.txt'],
-      devOptions: {
-        enabled: true
-      },
       workbox: {
         cleanupOutdatedCaches: true
       },

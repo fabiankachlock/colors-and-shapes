@@ -1,42 +1,18 @@
 import { defineStore } from 'pinia';
 import { Card } from '../business/Card';
-import { Color } from '../business/Colors';
-import { CreatePairs } from '../business/Scrambler';
-import { Shape } from '../business/Shapes';
+import { Scrambler } from '../business/Scrambler';
 import { useConfig } from './config';
+import { DescriptionResolverMap } from './game/DescriptionResolverMap';
+import { DisplayCard } from './game/DisplayCard';
+import { GameModesMap } from './game/GameModeConfigMap';
 import { useMessages } from './messages';
-
-export type DisplayCard = Card & {
-  isOpen: boolean;
-};
-
-export const ColorMap: Record<Color, string> = {
-  [Color.Red]: 'c-red',
-  [Color.Green]: 'c-green',
-  [Color.Blue]: 'c-blue',
-  [Color.Yellow]: 'c-yellow',
-  [Color.Black]: 'c-black',
-  [Color.White]: 'c-white',
-  [Color.Grey]: 'c-gray',
-  [Color.Orange]: 'c-orange',
-  [Color.Purple]: 'c-purple',
-  [Color.Pink]: 'c-pink',
-  [Color.Brown]: 'c-brown',
-  [Color.SkyBlue]: 'c-sky-blue'
-};
-
-export const ShapeMap: Record<Shape, string> = {
-  [Shape.Square]: 's-square',
-  [Shape.Triangle]: 's-triangle',
-  [Shape.Circle]: 's-circle'
-};
 
 export const useGame = defineStore('game', {
   state: () => {
     return {
-      cards: [] as DisplayCard[],
-      openCard: undefined as DisplayCard | undefined,
-      secondOpenCard: undefined as DisplayCard | undefined,
+      cards: [] as DisplayCard<unknown>[],
+      openCard: undefined as DisplayCard<unknown> | undefined,
+      secondOpenCard: undefined as DisplayCard<unknown> | undefined,
       timeOut: undefined as number | undefined
     };
   },
@@ -44,15 +20,15 @@ export const useGame = defineStore('game', {
   actions: {
     startGame() {
       const config = useConfig();
-      const newCards = CreatePairs(config.colors, config.shapes, config.numberOfCards);
+      const gameModeConfig = GameModesMap[config.gameMode];
+      const newCards = Scrambler.CreatePairs(gameModeConfig, config.numberOfCards);
       if (this.timeOut) {
         clearTimeout(this.timeOut);
       }
+
+      // @ts-ignore
       this.$patch({
-        cards: newCards.map(c => ({
-          ...c,
-          isOpen: false
-        })),
+        cards: newCards.map(c => new DisplayCard(c, false, DescriptionResolverMap[config.gameMode])),
         openCard: undefined,
         secondOpenCard: undefined,
         timeOut: undefined
@@ -66,7 +42,7 @@ export const useGame = defineStore('game', {
     updateOpenCards() {
       if (this.openCard && this.secondOpenCard) {
         // check if cards are a valid pair
-        const fits = Card.equals(this.openCard, this.secondOpenCard) && this.openCard.id !== this.secondOpenCard.id;
+        const fits = this.openCard.card.equals(this.secondOpenCard.card) && this.openCard.id !== this.secondOpenCard.id;
         if (!fits) {
           // close them, when they aren't
           this.setCardOpen(this.secondOpenCard.id, false);
@@ -82,7 +58,7 @@ export const useGame = defineStore('game', {
         }
       }
     },
-    clickedCard(card: DisplayCard) {
+    clickedCard(card: DisplayCard<unknown>) {
       if (card.id === this.openCard?.id || card.id === this.secondOpenCard?.id || card.isOpen) return;
 
       // turn card to open side
@@ -95,7 +71,7 @@ export const useGame = defineStore('game', {
         // second card selected
         this.secondOpenCard = card;
         // check if fits;
-        const fits = Card.equals(this.openCard, this.secondOpenCard) && this.openCard.id !== this.secondOpenCard.id;
+        const fits = this.openCard.card.equals(this.secondOpenCard.card) && this.openCard.id !== this.secondOpenCard.id;
         useMessages().emitMessage(fits ? 'game.fit' : 'game.noFit');
 
         // init timeout for automatically closing the cards

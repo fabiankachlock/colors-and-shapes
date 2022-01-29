@@ -1,11 +1,9 @@
-import { Color } from './Colors';
-import { Shape } from './Shapes';
 import { v4 as uuid } from 'uuid';
 
-export class Card {
-  constructor(public readonly color: Color, public readonly shape: Shape, public readonly id = uuid()) {}
+export abstract class Card<ConfigType> {
+  constructor(public readonly config: ConfigType, public readonly id = uuid()) {}
 
-  static equals(c1: Card, c2: Card): boolean {
-    return c1.shape === c2.shape && c1.color === c2.color;
-  }
+  abstract equals(card: Card<ConfigType>): boolean;
+
+  abstract clone(): Card<ConfigType>;
 }

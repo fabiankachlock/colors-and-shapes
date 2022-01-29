@@ -46,19 +46,19 @@
 	--col: #0aacfd;
 }
 
-.s-square {
+.s-square .card-inner {
 	background-color: var(--col);
 	clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
 	aspect-ratio: 1 / 1;
 }
 
-.s-circle {
+.s-circle .card-inner {
 	background-color: var(--col);
 	clip-path: circle(50% at 50% 50%);
 	aspect-ratio: 1 / 1;
 }
 
-.s-triangle {
+.s-triangle .card-inner {
 	background-color: var(--col);
 	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 	aspect-ratio: 1 / 1;
