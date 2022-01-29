@@ -4,6 +4,7 @@ import { Color } from '../business/Colors';
 import { CreatePairs } from '../business/Scrambler';
 import { Shape } from '../business/Shapes';
 import { useConfig } from './config';
+import { useMessages } from './messages';
 
 export type DisplayCard = Card & {
   isOpen: boolean;
@@ -88,6 +89,10 @@ export const useGame = defineStore('game', {
       if (this.openCard && !this.secondOpenCard) {
         // second card selected
         this.secondOpenCard = card;
+        // check if fits;
+        const fits = Card.equals(this.openCard, this.secondOpenCard) && this.openCard.id !== this.secondOpenCard.id;
+        useMessages().emitMessage(fits ? 'passt' : 'passt nicht');
+
         // init timeout for automatically closing the cards
         const config = useConfig();
         this.timeOut = setTimeout(() => {
