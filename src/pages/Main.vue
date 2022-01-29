@@ -2,8 +2,11 @@
   <Copyright />
   <div id="main" class="min-w-full overflow-hidden overflow bg-zinc-100 dark:bg-zinc-800 full-height p-4">
     <div class="relative grid wrapper w-full h-full max-h-full">
-      <header class="my-2 w-full flex flex-row justify-between items-start">
+      <header class="my-2 w-full grid">
         <h1 class="text-3xl my-1">{{ t('title') }}</h1>
+        <div id="header-row-2">
+          <MessageBar />
+        </div>
         <div class="flex flex-row flex-wrap justify-end">
           <div
             class="bg-gray-300 dark:bg-gray-700 rounded-full px-4 py-1 m-1 transform transition-transform hover:scale-95"
@@ -53,6 +56,7 @@ import { useGame } from '@/core/adapters/game';
 import { useConfig } from '@/core/adapters/config';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import Copyright from '@/components/Copyright.vue';
+import MessageBar from '@/components/game/MessageBar.vue';
 
 const { t } = useI18n();
 
@@ -91,6 +95,28 @@ const refresh = () => {
 </script>
 
 <style>
+header.grid {
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+}
+
+#header-row-2 {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+
+@media only screen and (min-width: 640px) {
+  header.grid {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1, auto);
+  }
+
+  #header-row-2 {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+
 main#grid {
   grid-template-columns: repeat(v-bind(cols), 1fr);
   grid-template-rows: repeat(v-bind(rows), minmax(auto, 1fr));
