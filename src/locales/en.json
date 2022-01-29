@@ -8,7 +8,8 @@
 		"colors": "Colors",
 		"shapes": "Shapes",
 		"cardAmount": "Card Amount",
-		"cardTimeout": "Open Card Duration"
+		"cardTimeout": "Open Card Duration",
+		"gameMode": "Game mode"
 	},
 	"lng": {
 		"de": "Deutsch",
@@ -18,6 +19,10 @@
 	"game": {
 		"fit": "Match!",
 		"noFit": "No match!"
+	},
+	"gameMode": {
+		"colors": "Colors",
+		"clothes": "Clothes"
 	},
 	"color": {
 		"cre": "Red",

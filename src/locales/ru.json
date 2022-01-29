@@ -8,7 +8,8 @@
 		"colors": "Цвета",
 		"shapes": "Формировать",
 		"cardAmount": "Сумма Карты",
-		"cardTimeout": "Время Открытой Карты"
+		"cardTimeout": "Время Открытой Карты",
+		"gameMode": "Игра"
 	},
 	"lng": {
 		"de": "Deutsch",
@@ -18,6 +19,10 @@
 	"game": {
 		"fit": "Подходит!",
 		"noFit": "Не подходит!"
+	},
+	"gameMode": {
+		"colors": "Цвета",
+		"clothes": "Одежда"
 	},
 	"color": {
 		"cre": "Красный",

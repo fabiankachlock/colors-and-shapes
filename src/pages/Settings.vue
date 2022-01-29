@@ -21,18 +21,11 @@
           <p class="text-xl">{{ t('settings.darkmode') }}</p>
           <ThemeSwitch />
         </div>
-        <div class="row">
-          <p class="text-xl">{{ t('settings.colors') }}</p>
-          <div class="ml-2">
-            <ColorSelection />
-          </div>
+        <div class="row row-flex">
+          <p class="text-xl">{{ t('settings.gameMode') }}</p>
+          <GameModeSelection />
         </div>
-        <div class="row">
-          <p class="text-xl">{{ t('settings.shapes') }}</p>
-          <div class="ml-2">
-            <ShapeSelection />
-          </div>
-        </div>
+
         <div class="row">
           <p class="text-xl">{{ t('settings.cardAmount') }}</p>
           <div class="ml-2">
@@ -43,6 +36,19 @@
           <p class="text-xl">{{ t('settings.cardTimeout') }}</p>
           <div class="ml-2">
             <CardTimeoutSlider />
+          </div>
+        </div>
+
+        <div class="row">
+          <p class="text-xl">{{ t('settings.colors') }}</p>
+          <div class="ml-2">
+            <ColorSelection />
+          </div>
+        </div>
+        <div class="row">
+          <p class="text-xl">{{ t('settings.shapes') }}</p>
+          <div class="ml-2">
+            <ShapeSelection />
           </div>
         </div>
       </main>
@@ -59,6 +65,7 @@ import ShapeSelection from '@/components/settings/ShapeSelection.vue';
 import CardAmountSelection from '@/components/settings/CardAmountSelection.vue';
 import Copyright from '@/components/Copyright.vue';
 import CardTimeoutSlider from '@/components/settings/CardTimeoutSlider.vue';
+import GameModeSelection from '@/components/settings/GameModeSelection.vue';
 
 const { t } = useI18n();
 </script>

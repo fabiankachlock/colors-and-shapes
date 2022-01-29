@@ -8,7 +8,8 @@
 		"colors": "Farben",
 		"shapes": "Formen",
 		"cardAmount": "Anzahl an Karten",
-		"cardTimeout": "Offene Kartendauer"
+		"cardTimeout": "Offene Kartendauer",
+		"gameMode": "Spielmodus"
 	},
 	"lng": {
 		"de": "Deutsch",
@@ -18,6 +19,10 @@
 	"game": {
 		"fit": "Passt!",
 		"noFit": "Passt nicht!"
+	},
+	"gameMode": {
+		"colors": "Farben",
+		"clothes": "Kleidung"
 	},
 	"color": {
 		"cre": "Rot",
