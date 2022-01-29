@@ -1,6 +1,6 @@
 import { Card } from './Card';
 import { shuffle } from './helper/shuffle';
-import { GameModeConfig } from './GameMode';
+import { GameModeConfig } from './GameModeConfig';
 
 export class Scrambler {
   static CreatePairs<T>(gameMode: GameModeConfig<T>, numberOfCards: number): Card<T>[] {

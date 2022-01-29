@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-import { Card } from '../business/Card';
 import { Scrambler } from '../business/Scrambler';
+import { ColorCardConfig } from '../use-cases/colors/ColorsCard';
 import { useConfig } from './config';
 import { DescriptionResolverMap } from './game/DescriptionResolverMap';
 import { DisplayCard } from './game/DisplayCard';
@@ -10,9 +10,9 @@ import { useMessages } from './messages';
 export const useGame = defineStore('game', {
   state: () => {
     return {
-      cards: [] as DisplayCard<unknown>[],
-      openCard: undefined as DisplayCard<unknown> | undefined,
-      secondOpenCard: undefined as DisplayCard<unknown> | undefined,
+      cards: [] as DisplayCard<any>[],
+      openCard: undefined as DisplayCard<any> | undefined,
+      secondOpenCard: undefined as DisplayCard<any> | undefined,
       timeOut: undefined as number | undefined
     };
   },
@@ -26,9 +26,8 @@ export const useGame = defineStore('game', {
         clearTimeout(this.timeOut);
       }
 
-      // @ts-ignore
       this.$patch({
-        cards: newCards.map(c => new DisplayCard(c, false, DescriptionResolverMap[config.gameMode])),
+        cards: newCards.map(c => new DisplayCard<any>(c, false, DescriptionResolverMap[config.gameMode])),
         openCard: undefined,
         secondOpenCard: undefined,
         timeOut: undefined
