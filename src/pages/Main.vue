@@ -70,7 +70,7 @@ const isRefreshing = ref(false);
 onMounted(() => {
   window.addEventListener('resize', sizeGrid);
   sizeGrid();
-  game.startGame();
+  game.startGameIfNeeded();
 });
 
 onUnmounted(() => {

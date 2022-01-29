@@ -58,6 +58,11 @@ export const useGame = defineStore('game', {
         timeOut: undefined
       });
     },
+    startGameIfNeeded() {
+      if (this.cards.length === 0) {
+        this.startGame();
+      }
+    },
     updateOpenCards() {
       if (this.openCard && this.secondOpenCard) {
         // check if cards are a valid pair
