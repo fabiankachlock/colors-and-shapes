@@ -7,7 +7,6 @@ export class ClothingCardDescriptionResolver implements DisplayCardDescriptionRe
     return '';
   }
   resolveBack(config: ClothingCardConfig): string {
-    console.log(config);
     return `${ClothingCSSMap[config.part]} gm-d`;
   }
 }
