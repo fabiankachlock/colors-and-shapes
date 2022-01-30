@@ -57,7 +57,7 @@ export const useGame = defineStore('game', {
         }
       }
     },
-    clickedCard(card: DisplayCard<unknown>) {
+    clickedCard(card: DisplayCard<any>) {
       if (card.id === this.openCard?.id || card.id === this.secondOpenCard?.id || card.isOpen) return;
 
       // turn card to open side

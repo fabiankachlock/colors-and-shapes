@@ -38,10 +38,10 @@
       <main id="grid" class="grid w-full relative">
         <Card
           v-for="(card, index) of cards"
-          :card="card"
+          :card="(card as DisplayCard<any>)"
           :order="index + 1"
           :key="card.id"
-          @click="game.clickedCard(card)"
+          @click="game.clickedCard(card as DisplayCard<any>)"
         />
       </main>
     </div>
@@ -57,6 +57,7 @@ import { useConfig } from '@/core/adapters/config';
 import { computed, onMounted, onUnmounted, ref } from 'vue';
 import Copyright from '@/components/Copyright.vue';
 import MessageBar from '@/components/game/MessageBar.vue';
+import { DisplayCard } from '@/core/adapters/game/DisplayCard';
 
 const { t } = useI18n();
 

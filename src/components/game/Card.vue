@@ -20,15 +20,13 @@
 <script setup lang="ts">
 import { DisplayCard } from '@/core/adapters/game/DisplayCard';
 import { toRefs } from 'vue';
-import { useConfig } from '@/core/adapters/config';
 
 const props = defineProps<{
-  card: DisplayCard<unknown>;
+  card: DisplayCard<any>;
   order: number;
 }>();
 
 const { card, order } = toRefs(props);
-const config = useConfig();
 </script>
 
 <style>
