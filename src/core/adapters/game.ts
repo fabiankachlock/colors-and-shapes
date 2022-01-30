@@ -27,7 +27,7 @@ export const useGame = defineStore('game', {
       }
 
       this.$patch({
-        cards: newCards.map(c => new DisplayCard<any>(c, true, DescriptionResolverMap[config.gameMode])),
+        cards: newCards.map(c => new DisplayCard<any>(c, false, DescriptionResolverMap[config.gameMode])),
         openCard: undefined,
         secondOpenCard: undefined,
         timeOut: undefined
