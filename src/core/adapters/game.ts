@@ -36,7 +36,6 @@ export const useGame = defineStore('game', {
     startGameIfNeeded() {
       const config = useConfig();
       if (this.cards.length === 0 || config.needsRefresh) {
-        console.log('restart', config.needsRefresh);
         this.startGame();
         config.refreshedGame();
       }
