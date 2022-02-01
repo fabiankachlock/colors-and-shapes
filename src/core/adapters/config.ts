@@ -43,6 +43,7 @@ export const useConfig = defineStore('config', {
       colors: DefaultColors,
       numberOfCards: 30 as number,
       cardTimeout: 2000 as number,
+      needsRefresh: false as boolean,
       gameMode: GameMode.colors as GameMode
     };
   },
@@ -58,9 +59,13 @@ export const useConfig = defineStore('config', {
     },
     setGameMode(mode: GameMode) {
       this.gameMode = mode;
+      this.needsRefresh = true;
       localStorage.setItem(gameModeKey, mode);
     },
     setCardAmount(amount: number) {
+      if (amount !== this.numberOfCards) {
+        this.needsRefresh = true;
+      }
       this.numberOfCards = amount;
       localStorage.setItem(cardAmountKey, amount.toString());
     },
@@ -81,6 +86,9 @@ export const useConfig = defineStore('config', {
       this.$patch({
         shapes: newShapes
       });
+    },
+    refreshedGame() {
+      this.needsRefresh = false;
     },
     configure() {
       let language = '';
