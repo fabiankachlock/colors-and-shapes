@@ -1,5 +1,57 @@
 .d-blouse .card-inner {
-	background-image: url(/gm/@clothes/dbl.png);
+	--img: url(/gm/@clothes/dbl.png);
+}
+
+.d-coat .card-inner {
+	--img: url(/gm/@clothes/dco.png);
+}
+
+.d-fur-coat .card-inner {
+	--img: url(/gm/@clothes/dfc.png);
+}
+
+.d-glasses .card-inner {
+	--img: url(/gm/@clothes/dgl.png);
+}
+
+.d-sun-glasses .card-inner {
+	--img: url(/gm/@clothes/dsg.png);
+}
+
+.d-high-heels .card-inner {
+	--img: url(/gm/@clothes/dhh.png);
+}
+
+.d-jacket .card-inner {
+	--img: url(/gm/@clothes/dja.png);
+}
+
+.d-jeans .card-inner {
+	--img: url(/gm/@clothes/dje.png);
+}
+
+.d-shirt .card-inner {
+	--img: url(/gm/@clothes/dsi.png);
+}
+
+.d-t-shirt .card-inner {
+	--img: url(/gm/@clothes/dts.png);
+}
+
+.d-shoes .card-inner {
+	--img: url(/gm/@clothes/dso.png);
+}
+
+.d-suit .card-inner {
+	--img: url(/gm/@clothes/dsu.png);
+}
+
+.d-trousers .card-inner {
+	--img: url(/gm/@clothes/dtr.png);
+}
+
+.d-undershirt .card-inner {
+	--img: url(/gm/@clothes/dun.png);
 }
 
 .gm-d .card-inner {
@@ -7,56 +59,5 @@
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-}
-
-.d-coat .card-inner {
-	background-image: url(/gm/@clothes/dco.png);
-}
-
-.d-fur-coat .card-inner {
-	background-image: url(/gm/@clothes/dfc.png);
-}
-
-.d-glasses .card-inner {
-	background-image: url(/gm/@clothes/dgl.png);
-}
-
-.d-sun-glasses .card-inner {
-	background-image: url(/gm/@clothes/dsg.png);
-}
-
-.d-high-heels .card-inner {
-	background-image: url(/gm/@clothes/dhh.png);
-}
-
-.d-jacket .card-inner {
-	background-image: url(/gm/@clothes/dja.png);
-}
-
-.d-jeans .card-inner {
-	background-image: url(/gm/@clothes/dje.png);
-}
-
-.d-shirt .card-inner {
-	background-image: url(/gm/@clothes/dsi.png);
-}
-
-.d-t-shirt .card-inner {
-	background-image: url(/gm/@clothes/dts.png);
-}
-
-.d-shoes .card-inner {
-	background-image: url(/gm/@clothes/dso.png);
-}
-
-.d-suit .card-inner {
-	background-image: url(/gm/@clothes/dsu.png);
-}
-
-.d-trousers .card-inner {
-	background-image: url(/gm/@clothes/dtr.png);
-}
-
-.d-undershirt .card-inner {
-	background-image: url(/gm/@clothes/dun.png);
+	background-image: var(--img);
 }
