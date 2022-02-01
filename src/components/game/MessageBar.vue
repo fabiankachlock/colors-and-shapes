@@ -17,5 +17,5 @@ import { useI18n } from 'vue-i18n';
 const messages = useMessages();
 const { t } = useI18n();
 
-const message = computed(() => t(messages.message));
+const message = computed(() => (messages.message ? t(messages.message) : ''));
 </script>
