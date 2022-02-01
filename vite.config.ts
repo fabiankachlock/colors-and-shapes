@@ -20,14 +20,23 @@ export default defineConfig({
     icons(),
     VitePWA({
       scope: '/',
-      includeAssets: ['/logo.png', 'icons/*.png', 'icons/*.svg', 'icons/*.xml', 'icons/*.ico', 'robots.txt'],
+      registerType: 'autoUpdate',
+      includeAssets: [
+        '/logo.png',
+        'icons/*.png',
+        'icons/*.svg',
+        'icons/*.xml',
+        'icons/*.ico',
+        'robots.txt',
+        'gm/@clothes/*.png'
+      ],
       workbox: {
         cleanupOutdatedCaches: true
       },
       manifest: {
         name: 'Colors & Shapes',
         short_name: 'Colors',
-        theme_color: '#16a34a',
+        theme_color: '#1e293b',
         start_url: '/',
         display: 'standalone',
         background_color: '#1e293b',
