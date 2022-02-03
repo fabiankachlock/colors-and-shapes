@@ -14,5 +14,6 @@ export const ClothingCSSMap: Record<Clothing, string> = {
   [Clothing.Shoes]: 'd-shoes',
   [Clothing.Suit]: 'd-suit',
   [Clothing.Trousers]: 'd-trousers',
-  [Clothing.Undershirt]: 'd-undershirt'
+  [Clothing.Undershirt]: 'd-undershirt',
+  [Clothing.Skirt]: 'd-skirt'
 };

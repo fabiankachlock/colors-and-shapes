@@ -12,5 +12,6 @@ export enum Clothing {
   Shoes = 'dso',
   Suit = 'dsu',
   Trousers = 'dtr',
-  Undershirt = 'dun'
+  Undershirt = 'dun',
+  Skirt = 'dsk'
 }

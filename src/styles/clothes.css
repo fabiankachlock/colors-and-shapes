@@ -54,6 +54,10 @@
 	--img: url(/gm/@clothes/dun.png);
 }
 
+.d-skirt .card-inner {
+	--img: url(/gm/@clothes/dsk.png);
+}
+
 .gm-d .card-inner {
 	width: 100%;
 	background-position: center;
